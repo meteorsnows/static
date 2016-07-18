@@ -12,8 +12,8 @@ var datascource = {
   ]
 };
 
-var countTree = 30000;
-var topTree = 1
+var countTree = 1000;
+var topTree = 30
 var nextCount = 0;
 for(var i=1; i <= topTree;i++){
 
