@@ -8,19 +8,10 @@
       'name': 'Lao Lao',
       'title': 'general manager',
       'children': [
-        { 'name': 'Bo Miao', 'title': 'department manager',
-          'children': [{ 'name': 'Li Xin', 'title': 'senior engineer' }]
+        { 'name': 'Bo Miao', 'title': 'department manager'
+
         },
-        { 'name': 'Su Miao', 'title': 'department manager',
-          'children': [
-            { 'name': 'Tie Hua', 'title': 'senior engineer' },
-            { 'name': 'Hei Hei', 'title': 'senior engineer',
-              'children': [
-                { 'name': 'Pang Pang', 'title': 'engineer' },
-                { 'name': 'Xiang Xiang', 'title': 'UE engineer' }
-              ]
-            }
-          ]
+        { 'name': 'Su Miao', 'title': 'department manager'
         }
       ]
     };
