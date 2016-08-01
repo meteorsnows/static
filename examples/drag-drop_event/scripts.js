@@ -4,42 +4,48 @@
 
   $(function() {
 
-    var datascource = {
-      'name': 'Lao Lao',
-      'title': 'general manager',
-      'children': [
-        { 'name': 'Bo Miao', 'title': 'department manager'
+var datascource = {
+  'name': 'Lao Lao',
+  'title': 'general manager',
+  'children': [
+    
+  ]
+};
 
-        },
-        { 'name': 'Su Miao', 'title': 'department manager'
-        }
-      ]
+var countTree = 1;
+var topTree = 1;
+var nextCount = 0;
+for(var i=1; i <= topTree;i++){
+
+  
+
+  var secondGen = { 'name': 'Bo Miao'+i, 'title': 'department manager',
+      'children': []
     };
+  var thirdGen = [];
+
+  nextCount = 1 + (i * countTree);
+  
+  for(var j = nextCount ; j < (nextCount+countTree); j++){
+    var obj = {'name': null, 'title': null};
+    obj.name = 'people_' +j;
+    obj.title = 'people_' + j;
+    thirdGen.push(obj)
+  }
+  secondGen.children = thirdGen
+  datascource.children.push(secondGen);
+
+}
 
     $('#chart-container').orgchart({
       'data' : datascource,
       'nodeContent': 'title',
       'draggable': true,
+      'pan': false,
+      'zoom': false,
       'dropCriteria': function($draggedNode, $dragZone, $dropZone) {
-        console.log($draggedNode)
-        console.log($dropZone)
         if($draggedNode.find('.content').text().indexOf('manager') > -1 && $dropZone.find('.content').text().indexOf('engineer') > -1) {
-
-          /*
-          if($draggedNode != $dropZone){
-
-
           return false;
-          }
-          */
-
-        if($offsetTop[0].offsetTop == 0){
-          return false;
-
-        }
-
-
-
         }
         return true;
       }

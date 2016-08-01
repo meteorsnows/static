@@ -13,15 +13,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="style.css">
 
-
-<script src="DragDropTouch.js"></script>
-<!--
-<script>
-var iosDragDropShim = { enableEnterLeave: false }
-</script>
-<script src="ios-drag-drop.js"></script>
--->
-
 </head>
 <body>
   <div id="chart-container"></div>
@@ -29,6 +20,11 @@ var iosDragDropShim = { enableEnterLeave: false }
   <script type="text/javascript" src="../js/jquery.min.js"></script>
   <script type="text/javascript" src="../js/jquery.orgchart_event.js"></script>
   <script type="text/javascript" src="scripts.js"></script>
+  <script type='text/javascript' src='fastclick.js'></script>
+  <script>
+var attachFastClick = Origami.fastclick;
+attachFastClick(document.body);
 
+  </script>
   </body>
 </html>
